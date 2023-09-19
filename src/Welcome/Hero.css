@@ -1,0 +1,83 @@
+*{
+    padding: 0;
+    margin: 0;
+  }
+  html {
+    font-size: 62.5%;
+  } 
+  body {
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #fff;
+  }
+/* Background-image */
+.background--img{
+    background-image: url(../Images/purple.jpg);
+    height: 100vh;  
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.hero--text{
+    text-align: center;
+    padding-top: 20rem;
+}
+.hero--text h1{
+    font-size: 9rem;
+    font-family: cursive;
+    
+}
+/* Button */
+.btn,
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  padding: 1.6rem 5rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative;
+  font-size: 1.6rem; 
+  border: none;
+}
+
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(241, 93, 93, 0.2); }
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(219, 77, 77, 0.2); }
+
+.btn--white {
+  background-color: #fff;
+  color:rgb(110, 0, 18); }
+
+.btn--pink {
+    margin-top: 2rem;;
+    background-color: rgb(138, 15, 36);
+    color: #fff;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s; }
+
+.btn--white::after {
+  background-color: white; }
+
+.btn:hover::after {
+  transform: scale(1.5);
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0; }

@@ -1,0 +1,11 @@
+.gallery--text{
+    padding-top: 8rem;
+   
+}
+.gallery--text h2{
+    text-align: center;
+    font-size: 5rem;
+    padding-bottom: 2rem;
+    font-family: cursive;
+    color: rgb(110, 0, 18);
+}
