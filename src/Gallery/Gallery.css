@@ -91,3 +91,23 @@
 .image-container.hovered {
   border: 2px dashed #007bff;
 }
+
+/* Media query */
+@media screen and (max-width: 920px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 0.5rem;
+  }
+  .image{
+    width: 12rem;
+    height: 15rem;
+}
+}

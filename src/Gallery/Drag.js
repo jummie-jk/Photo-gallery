@@ -1,9 +1,7 @@
-
-
 import React from 'react';
 import { useDrag } from 'react-dnd';
 import { useDrop } from 'react-dnd';
-import { ItemTypes } from './Item'; // Define your item types in a separate file
+import { ItemTypes } from './Item'; 
 
 const DraggableImage = ({ image, index, onImageDrop }) => {
   const [, ref] = useDrag({
@@ -16,7 +14,7 @@ const DraggableImage = ({ image, index, onImageDrop }) => {
     hover: (draggedItem) => {
       if (draggedItem.index !== index) {
         onImageDrop(draggedItem.index, index);
-        draggedItem.index = index; // Update the dragged item's index
+        draggedItem.index = index; 
       }
     },
   });
@@ -25,7 +23,7 @@ const DraggableImage = ({ image, index, onImageDrop }) => {
     <div
       ref={(node) => ref(drop(node))}
       className="image-container grid-item"
-      style={{ opacity: 1 }} // Reset the opacity when not being dragged
+      style={{ opacity: 1 }}
     >
       <img src={image.src} className='image' alt={image.description} />
       <div className="image-description">{image.description}</div>
