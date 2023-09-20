@@ -8,13 +8,16 @@
   body {
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
-    /* overflow: hidden; */
+    
   }
 /* Background-image */
 .background--img{
     background-image: url(../Images/purple.jpg);
-    height: 100vh;  
+    height: 100vh;   
     width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    overflow: hidden;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -70,7 +73,7 @@
 
 .btn--pink {
     margin-top: 2rem;;
-    background-color: rgb(138, 15, 36);
+    background-color: #51095a;
     color: #fff;
 }
 

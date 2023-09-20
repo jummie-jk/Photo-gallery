@@ -1,20 +1,20 @@
-body {
+
+  body {
     font-family: 'Montserrat', sans-serif;
-    box-sizing: border-box; 
-     overflow: scroll;
-     overflow: visible; 
-     
+    box-sizing: border-box;
+    overflow-y: visible;
+    overflow-y: visible;
   }
 #gallery--text{
     padding-top: 4rem;
-    color: #111;
+    color: #760c85;
 }
 #gallery--text h2{
     text-align: center;
     font-size: 5rem;
     padding-bottom: 2rem;
     font-family: cursive;
-    color: rgb(110, 0, 18);
+    color: #760c85;
 }
 
 .image{
@@ -33,7 +33,7 @@ body {
     font-size: 1.5rem;
   }
 .image-description{
-    color: rgb(110, 0, 18);
+    color: #111;
     font-weight: 700;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -41,5 +41,53 @@ body {
     display: flex;
     justify-content: center; 
     align-items: center;
-    height: 10vh; 
+    height: 10vh;
+    padding-bottom: 2rem;
   }
+.not--found{
+    background-color: #760c85;
+    padding: 5rem;
+    height: 30%;
+    width: 40%;
+    margin: 0 auto;
+    border-radius: 2rem;
+  }
+.custom-style {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+ 
+}
+.notFound--text{
+  text-align: center;
+  color: #fff;
+  font-size: 3rem;
+}
+
+.image-container {
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-container.hover {
+  transform: scale(1.05);
+  opacity: 0.7;
+}
+
+.drop-target {
+  background-color: #f2f2f2;
+  border: 2px dashed #aaa;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.drop-target.hover {
+  background-color: #d9d9d9;
+}
+.image-container {
+  transition: transform 0.2s ease-in-out;
+}
+.image-container.dragging {
+  opacity: 0.5; 
+}
+.image-container.hovered {
+  border: 2px dashed #007bff;
+}

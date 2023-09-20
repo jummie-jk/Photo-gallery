@@ -1,5 +1,5 @@
 .login--background{
-    background-image: url(../Images/bg-img.jpg);
+    background-image: url(../Images/bg2.jpg);
     height: 100vh;  
     width: 100%;
     background-size: cover;
@@ -9,6 +9,7 @@
 }
 .login--text{
     padding-top: 10rem;
+    color: white;
 }
 .login--text h2{
     font-size: 5rem;
@@ -31,7 +32,7 @@ input {
     text-align: center;
     padding: 2rem;
     margin: 10px 5rem;
-    border: 1px solid rgb(110, 0, 18);
+    border: 1px solid #c257bf;
     border-radius:  2rem;
     display: block;
   }

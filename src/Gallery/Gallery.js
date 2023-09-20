@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import NotFound from './NotFound';
+import { DndProvider} from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
+import DraggableImage from './Drag';
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
@@ -38,8 +42,16 @@ const Gallery = () => {
   const filteredImages = images.filter((image) =>
     image.description.toLowerCase().includes(searchQuery)
   );
+  const handleImageDrop = (fromIndex, toIndex) => {
+    const updatedImages = [...images];
+    const [movedImage] = updatedImages.splice(fromIndex, 1);
+    updatedImages.splice(toIndex, 0, movedImage);
+
+    setImages(updatedImages);
+  };
 
   return (
+    <DndProvider backend={HTML5Backend}>
     <div>
         <div id='gallery--text'>
             <h2>Gallery</h2>
@@ -56,20 +68,27 @@ const Gallery = () => {
       {loading ? (
         <div>Loading...</div>
       ) : (
-        <div className="grid-container">
-          {filteredImages.map((image) => (
-            <div key={image.id} className="image-container grid-item">
-                {image.src ? (
-                <img src={image.src} className='image' alt={image.description} />
-                ) : (
-                <div className="image-not-found">Image not found</div>
-                )}
-              <div className="image-description">Tag: {image.description}</div>
+        <div className=" ">
+          {filteredImages.length === 0 ? (
+            <div className='not--found custom-style'>
+              <NotFound />
             </div>
-          ))}
+          ) : (
+             <div className="grid-container">
+              {filteredImages.map((image, index) => (
+                <DraggableImage
+                  key={image.id}
+                  image={image}
+                  index={index}
+                  onImageDrop={handleImageDrop}
+                />
+              ))}
+            </div>
+          )}
         </div>
       )}
     </div>
+    </DndProvider>
   );
 };
 
