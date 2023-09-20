@@ -8,8 +8,7 @@
   body {
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
-    overflow: hidden;
-    color: #fff;
+    /* overflow: hidden; */
   }
 /* Background-image */
 .background--img{
@@ -19,16 +18,27 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    color: #fff;
 }
 .hero--text{
     text-align: center;
-    padding-top: 20rem;
+    padding-top: 15rem;
 }
 .hero--text h1{
-    font-size: 9rem;
+    font-size: 6rem;
     font-family: cursive;
-    
+   
 }
+.hero--text p{
+    font-size: 4rem;
+    font-family: cursive;
+}
+#italic{
+    font-style: italic;
+    font-size: 2rem;
+    padding-bottom: 3rem;
+}
+
 /* Button */
 .btn,
 .btn:link,
@@ -54,7 +64,9 @@
 
 .btn--white {
   background-color: #fff;
-  color:rgb(110, 0, 18); }
+  color:rgb(110, 0, 18);
+  margin-top: 3rem;
+ }
 
 .btn--pink {
     margin-top: 2rem;;
@@ -75,7 +87,9 @@
   transition: all .4s; }
 
 .btn--white::after {
-  background-color: white; }
+  background-color: white;
+
+ }
 
 .btn:hover::after {
   transform: scale(1.5);

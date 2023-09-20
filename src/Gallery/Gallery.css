@@ -1,11 +1,45 @@
-.gallery--text{
-    padding-top: 8rem;
-   
+body {
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box; 
+     overflow: scroll;
+     overflow: visible; 
+     
+  }
+#gallery--text{
+    padding-top: 4rem;
+    color: #111;
 }
-.gallery--text h2{
+#gallery--text h2{
     text-align: center;
     font-size: 5rem;
     padding-bottom: 2rem;
     font-family: cursive;
     color: rgb(110, 0, 18);
 }
+
+.image{
+    width: 25rem;
+    height: 30rem;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+  }
+  .grid-item {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    box-shadow: #111;
+    padding: 3rem;
+    font-size: 1.5rem;
+  }
+.image-description{
+    color: rgb(110, 0, 18);
+    font-weight: 700;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 10vh; 
+  }
