@@ -3,6 +3,7 @@ import { useDrag } from 'react-dnd';
 import { useDrop } from 'react-dnd';
 import { ItemTypes } from './Item'; 
 
+
 const DraggableImage = ({ image, index, onImageDrop }) => {
   const [, ref] = useDrag({
     type: ItemTypes.IMAGE,

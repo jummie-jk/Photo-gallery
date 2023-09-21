@@ -5,8 +5,8 @@ const NotFound = () => {
     <>
       <div id="notfound--container">
         <div className="notFound--text">
-          <p>Ooppss!</p>
           <p>Image Not Found</p>
+          <p>Kindly confirm the tag name</p>
         </div>
       </div>
     </>

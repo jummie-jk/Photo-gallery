@@ -4,6 +4,7 @@ import NotFound from './NotFound';
 import { DndProvider} from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import DraggableImage from './Drag';
+import { BeatLoader } from 'react-spinners';
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
@@ -66,7 +67,10 @@ const Gallery = () => {
         />
       </div>
       {loading ? (
-        <div>Loading...</div>
+        <div className='loading'>
+          Loading...
+          <BeatLoader color="#760c85" size={15} margin={0} loading={true} />
+          </div>
       ) : (
         <div className=" ">
           {filteredImages.length === 0 ? (
@@ -87,8 +91,10 @@ const Gallery = () => {
           )}
         </div>
       )}
+      
     </div>
     </DndProvider>
+   
   );
 };
 
