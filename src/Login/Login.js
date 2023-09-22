@@ -1,66 +1,64 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { auth } from '../firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import "firebase/auth"; 
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
-  const [authenticated, setAuthenticated] = useState(false);
-
+  const [success, setSuccess] = useState("")
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    const validEmail = "user@example.com";
-    const validPassword = "1Password";
-
-    if (email === validEmail && password === validPassword) {
-      setSuccess("Login successful");
-      setError("");
-      setAuthenticated(true);
-
-      setTimeout(() => {
-        setSuccess(""); 
+  const handleLogin = async () => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      const user = auth.currentUser;
+      if (user) {
+        setSuccess("Login successful");
+        setError("");
         navigate("/gallery");
-      }, 1000);
-
-    } else {
-      setError("Invalid email or password");
-      setSuccess("");
-      setAuthenticated(false);
+      } else {
+        setError("Invalid email or password");
+      }
+    } catch (error) {
+      setError(`Error signing in Kindly confirm your details`);
+      console.error(error);
     }
   };
-
+  
   return (
     <div className="login--background">
       <div className="login--text">
         <h2>Login</h2>
+        <p>{success}</p>
       </div>
       <div className="input--block">
         <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
-         <div className="login--update">
+        <div className="login--update">
           {error && <p className="red">{error}</p>}
-          {success && <p className="green">{success}</p>}
-          {authenticated && <p>{authenticated}</p>}
         </div>
         <button onClick={handleLogin} className="btn btn--pink">
-            Go to gallery
+          Go to gallery
         </button>
       </div>
-     
     </div>
   );
 }
 
 export default Login;
+
+
+

@@ -53,7 +53,7 @@ const Gallery = () => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-    <div>
+    <div className='gallery--main'>
         <div id='gallery--text'>
             <h2>Gallery</h2>
         </div>
